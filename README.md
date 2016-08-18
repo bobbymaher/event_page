@@ -1,5 +1,5 @@
 # event_page
-Chrome extension to Focus tab and window on page sending message
+A Chrome extension to Focus the tab and window on a certain webpage that wants the focus
 
 
 1. modify manifest to include your URL
