@@ -1,4 +1,4 @@
-# event_page
+# Tab Switch
 A Chrome extension to Focus the tab and window on a certain webpage that wants the focus
 
 it uses chrome.runtime.onMessageExternal.addListener to recieve a message from a webpage to notify the extension
