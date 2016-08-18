@@ -1,8 +1,17 @@
-chrome.runtime.onMessage.addListener(function (msg, sender) {
-  // First, validate the message's structure
-   console.log("background listener");
-  if ((msg.from === 'content') && (msg.subject === 'showPageAction')) {
-    // Enable the page-action for the requesting tab
-    chrome.pageAction.show(sender.tab.id);
-  }
-});
+
+
+chrome.runtime.onMessageExternal.addListener(
+  function(request, sender, sendResponse) {
+      console.log('got external call');
+      console.log('req',request);
+      console.log('sender',sender);
+      
+      
+      chrome.tabs.update(sender.tab.id, {selected: true});
+      
+      console.log('window id', sender.tab.id);
+       console.log('tab id', sender.tab.windowId);
+      chrome.windows.update(sender.tab.windowId, {focused: true});
+  });
+  
+  
